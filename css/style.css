@@ -514,8 +514,12 @@ figure {
 	display: inline-block;
 	vertical-align: middle;
 	margin: 10px 0 10px 17px;
-	max-width: 100%;
+	max-width: 70%;
 	max-height: 75vh;
+}
+
+.slide .col-left img {
+	max-width: none;
 }
 
 
