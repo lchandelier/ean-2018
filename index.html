@@ -35,7 +35,7 @@
 			<a href="https://mylene-chandelier.me">
 				<img id="logo" class="main-logo" src="img_slide/m.svg" width="44" alt="Portfolio de Mylène Chandelier" role="img" />
 			</a>
-			<h1 class="main-title">&ldquo;Gérer l’accessibilité d’un projet sans profil technique&rdquo;</h1>
+			<h1 class="main-title">&ldquo;Gérer l’accessibilité d’un projet sans compétences techniques&rdquo;</h1>
 		</header>
 
 		<div id="nav" class="tool-bar footer-nav clearfix">
@@ -62,7 +62,7 @@
 			<main role="main" id="main">
 
 				<section class="slide couv">
-					<h2>Gérer l’accessibilité d’un projet sans profil technique</h2>
+					<h2>Gérer l’accessibilité d’un projet sans compétences techniques</h2>
 				</section>
 
 				<section class="slide">
@@ -102,40 +102,34 @@
 					<h2>Avant-vente</h2>
 					<ul>
 						<li class="Cmasque">Prévoir un chiffrage plus large (surtout si l’équipe n’est pas formée)</p>
-							<li class="Cmasque">Ventiler les charges sur tous les postes (ce n’est pas que du développement)</li>
+						<li class="Cmasque">Ventiler les charges sur tous les postes (ce n’est pas que du développement) ou prévoir une ligne "accessibilité" selon le contexte</li>
+						<li class="Cmasque">Impact sur le planning : s'assurer que l'équipe peut produire dans les temps</li>
+					</ul>
+				</section>
+				
+				<section class="slide">
+					<h2>Plan d'assurance Qualité</h2>
+					<p>Se renseigner sur le sujet avant de faire les spécifications. Découvrir le
+						<abbr title="Référentiel Général d’Accessibilité pour les Administrations">RGAA</abbr>.<br/>
+					</p>
+					Établir un <abbr title="Plan d’assurance qualité">PAQ</abbr> :
+					<ul>
+						<li class="Cmasque">Inscrire l’utilisation du RGAA et l’objectif du niveau AA</p></li>
+						<li class="Cmasque">Comment sera testée l'accessibilité (qui, quand, comment)</li>
+						<li class="Cmasque">Procédure maintenance, définition d'un niveau d'acceptation des livrables</li>
+						<li class="Cmasque">Ajouter en annexe les critères à respecter par chacun (idéalement séparés par métiers)</li>
+						<li class="Cmasque">Si mode agile : accessibilité peut être incluse dans la définition de &ldquo;fait&rdquo;</li>
 					</ul>
 				</section>
 				<section class="slide">
 					<h2>Spécifications</h2>
-					<p>Se renseigner sur le sujet avant de faire les spécifications. Découvrir le
-						<abbr title="Référentiel Général d’Accessibilité pour les Administrations">RGAA</abbr>.
-					</p>
-					<ul>
-						<li>
-							<abbr title="Plan d’assurance qualité">PAQ</abbr>
-							<ul>
-								<li class="Cmasque">Inscrire l’utilisation du RGAA et l’objectif du niveau AA</p>
-									<li class="Cmasque">Préciser la fréquence des tests effectués et qui va les faire et quand (fin du sprint, fin de release)</li>
-							</ul>
-							</li>
-							<li class="Cmasque">
-								Spécifications techniques et fonctionnelles pour détailler comment :
-								<ul>
-									<li class="Cmasque">Gérer le texte masqué (.visually-hidden)</li>
-									<li class="Cmasque">Gérer les alternatives aux images (décoratives ou non, images liens)</li>
-									<li class="Cmasque">Intégrer les vidéos et les composants dynamiques de manière accessible</li>
-									<li class="Cmasque">Quels champs doivent être obligatoires dans le CMS (selon le contexte)</li>
-								</ul>
-							</li>
-							<li class="Cmasque">
-								Cahier des charges
-								<ul>
-									<li class="Cmasque">Reprendre ce qui a été écrit dans le PAQ</li>
-									<li class="Cmasque">Ajouter en annexe les critères à respecter par chacun (idéalement séparés par métiers)</li>
-									<li class="Cmasque">Si mode agile : accessibilité peut être incluse dans la définition de &ldquo;fait&rdquo;</li>
-								</ul>
-							</li>
-					</ul>
+						S'entourer des bonnes personnes pour aider à la rédaction des spécifications techniques et fonctionnelles.<br/> Détailler comment :
+						<ul>
+							<li class="Cmasque">Gérer le texte masqué (.visually-hidden)</li>
+							<li class="Cmasque">Gérer les alternatives aux images (décoratives ou non, images liens)</li>
+							<li class="Cmasque">Gérer les changements de langues</li>
+							<li class="Cmasque">Intégrer les vidéos et les composants dynamiques de manière accessible</li>
+						</ul>
 				</section>
 
 				<section class="slide">
@@ -156,7 +150,7 @@
 							<span lang="en">Wave toolbar</span>
 						</li>
 						<li>aXe Core</li>
-						<li>Lighthouse de Google Chrome</li>
+						<li><span lang="en">Lighthouse</span> de Google Chrome</li>
 						<li>
 							<span lang="en">HeadingsMap</span>
 						</li>
@@ -172,6 +166,7 @@
 						<span lang="en">Wave toolbar</span>
 					</h2>
 					<div class="col-left">
+						Idéal pour les chefs de projet.<br/>
 						Met en surbrillance différentes informations comme les erreurs, les avertissements, les éléments ARIA utilisés, les niveaux
 						de titres.
 					</div>
@@ -209,15 +204,13 @@
 				<section class="slide">
 					<h2>aXe Core</h2>
 					<p>
-						Outil très populaire (plus d’1 million de téléchargements). Il se base sur le référentiel
+						Idéal pour les développeurs, c'est un outil très populaire (plus d’1 million de téléchargements). Il se base sur le référentiel
 						<abbr title="Web Content Accessibility Guidelines"
-						 lang="en">WCAG</abbr>, la section 508 et donne des bonnes pratiques de code (role="main" sur balise main uniquement, titre de
-						niveau 1 présent dans la page)
+						 lang="en">WCAG</abbr>, la section 508 et donne des bonnes pratiques de code (role="main" sur balise main uniquement, titre de niveau 1 présent dans la page).
 					</p>
 					<br/>
 					<img src="img/4-axe.jpg" alt="Détail d’une erreur dans aXe. Ici, l’entrée de menu « emploi » est en surbrillance et n’a pas un ratio de contraste suffisant"
 					 class="center">
-
 				</section>
 
 				<section class="slide">
@@ -225,7 +218,8 @@
 						<h2>
 							<span lang="en">Lighthouse</span> de Google Chrome</h2>
 						<p>
-							Scanne la page pour donner un score d’accessibilité, le performance, de SEO et de
+							Idéal pour les développeurs. <br/>
+							Basé sur aXe Core, il scanne la page pour donner un score d’accessibilité, de performance, de SEO et de
 							<span lang="en">progressive web app</span>.
 						</p>
 					</div>
@@ -254,6 +248,7 @@
 							<span lang="en">HeadingsMap</span>
 						</h2>
 						<p>
+							Idéal pour les chefs de projet. <br/>
 							Liste tous les titres présents dans la page. Cela permet de voir d’un coup d’oeil si la hiérarchie h1, h2, h3, h4... est
 							respectée au non.
 						</p>
@@ -268,7 +263,7 @@
 						<span lang="en">Tanaguru Contrast Finder</span>
 					</h2>
 					<p>
-						Ce site permet de tester le ratio de contraste entre le texte et la couleur de fond et propose une palette de couleurs valides
+						Idéal pour les designers, ce site permet de tester le ratio de contraste entre le texte et la couleur de fond et propose une palette de couleurs valides
 						si le test initial n’est pas conforme.
 					</p>
 					<br/>
@@ -289,7 +284,7 @@
 						<span lang="en">Validateur w3C</span>
 					</h2>
 					<p>
-						Valider le code HTML est un critère à respecter car cela peut éviter une mauvaise restitution du contenu par les lecteurs
+						Idéal pour les développeurs, il sert à valider le code HTML est un critère à respecter car cela peut éviter une mauvaise restitution du contenu par les lecteurs
 						d’écran si la structure n’est pas conforme.
 					</p>
 					<br/>
