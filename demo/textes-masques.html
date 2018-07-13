@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Test de restitution des éléments graphiques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="base.min.css">
+</head>
+
+<body>
+    <main role="main">
+        <div class="center-content">
+            <h1>Tests de restitution de textes masqués et d'alternatives textuelles aux images</h1>
+
+            <h2>Tests de restitution de textes masqués</h2>
+            <p>
+                Les tests suivants servent à s'assurer que des contenus affichés uniquement par la présentation (CSS) sont correctement restitués
+                par les lecteurs d'écran. Ils permettent également de voir si le contenu reste compréhensible lorsque CSS
+                est désactivé.
+                <br/> Voici la liste des critères vérifiés :
+            </p>
+
+            <ul>
+                <li>
+                    <a href="https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#liens">6.1, 6.3, 6.5</a>
+                </li>
+                <li>
+                    <a href="https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#codesentation">10.2, 10.3</a>
+                </li>
+            </ul>
+            <p>
+                Test d'une liste de liens avec des icônes intégrées en CSS. Un texte masqué indique le nom de chaque lien.
+                <br/> J'utilise la méthode du conteneur avec un texte masqué en CSS :
+                <br/>
+                <code>&lt;span class="a11y_hidden"&gt;Retrouvez-nous sur facebook&lt;/span&gt;</code>
+                <br/> Cette méthode est plus robuste que l'utilisation d'aria-label ou aria-labelledby car interprétable par des
+                lecteurs d'écrans plus anciens.
+            </p>
+            <ul class="inline-list">
+                <li>
+                    <a href="https://facebook.com" class="fb">
+                        <span class="a11y_hidden">Retrouvez-nous sur facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com" class="lk">
+                        <span class="a11y_hidden">Suivez-nous sur linkedin</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com" class="yt">
+                        <span class="a11y_hidden">Regardez notre chaîne Youtube</span>
+                    </a>
+                </li>
+            </ul>
+            <p>
+                Test 10.2 non conforme. Le contenu n'est pas visible lorsque CSS est désactivé. Il est en revanche annoncé par les lecteurs
+                d'écrans.
+                <br/> Le contenu textuel est intégré via
+                <code>aria-label</code> et
+                <code>title</code>
+            </p>
+            <ul class="inline-list">
+                <li>
+                    <a href="https://facebook.com" class="fb" aria-label="Retrouvez-nous sur facebook"></a>
+                </li>
+                <li>
+                    <a href="https://youtube.com" class="yt" title="Regardez notre chaîne Youtube"></a>
+                </li>
+            </ul>
+
+            <p>
+                Test non conforme, il n'y a pas de texte indiquant la fonction des liens.
+            </p>
+            <ul class="inline-list">
+                <li>
+                    <a href="https://facebook.com" class="fb"></a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com" class="lk"></a>
+                </li>
+                <li>
+                    <a href="https://youtube.com" class="yt"></a>
+                </li>
+            </ul>
+
+            <h2>Tests de restitution d'alternatives textuelles</h2>
+            <img src="http://placekitten.com/400/300" alt=""/>
+            <p>
+                Image décorative sans alternative textuelle car elle n'est là que pour remplir la page.
+            </p>
+            <img src="http://placekitten.com/200/200" alt="Chat tricolore couché sur le flanc gauche qui regarde fixement l'objectif"/>
+            <p>
+                Ici, l'image a une alternative textuelle car elle apporte une information. Ici, un exemple de chat.<br/>
+                
+                Chat est un terme ambigu employé en français pour désigner de nombreux félins de taille moyenne ou plus petite,
+                 appartenant à la sous-famille des félinés. Il désigne par synecdoque, l'ensemble des félins. La sous-famille des 
+                 Panthérinés est parfois désigné par l'expression « grands chats ». Employé seul, il s'agit du nom vernaculaire 
+                 donné au chat domestique (Felis silvestris catus). Le terme Chat sauvage définit également plusieurs espèces ou sous-espèces.
+                 (source: wikipédia)
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>
